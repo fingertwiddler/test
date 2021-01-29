@@ -10,7 +10,8 @@
         line-height: 20px;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
-        background: gold;
+        background: rgba(0,0,0,0.9);
+        color: white;
       }
       hr {
         background: rgba(0,0,0,0.1);
@@ -26,17 +27,16 @@
         padding: 50px;
         margin: 0 auto;
         position: sticky;
-        text-align: left;
+        text-align: right;
         top: 0;
       }
       nav h1 {
         margin: 0;
-        font-size: 80px;
+        font-size: 60px;
         letter-spacing: -3px;
-        display: inline-block;
       }
       nav h1 a {
-        color: black;
+        color: white;
       }
       h1 a {
         text-decoration: none;
@@ -46,9 +46,8 @@
         max-width: 600px;
       }
       header h1 {
-        letter-spacing: -3px;
-        font-size: 60px;
-        text-transform: lowercase;
+        font-style: italic;
+        font-family: Georgia;
       }
       main {
         margin: 0px auto;
@@ -68,13 +67,14 @@
         font-size: 20px;
         line-height: 28px;
         margin: 30px 0;
-        box-shadow: inset 3px 0 0 0 black;
+        box-shadow: inset 3px 0 0 0 rgba(255,255,255,0.4);
         font-family: Georgia;
         font-style: italic;
+        color: white;
         padding-left: 20px;
       }
       pre {
-        background: rgba(0,0,0,0.8);
+        background: rgba(255,255,255,0.04);
         padding: 10px;
         overflow: auto;
         color: white;
@@ -92,30 +92,18 @@
         text-decoration: none;
         color: rgba(0,0,0,0.5);
       }
-      @keyframes spring {
-        0% { transform: scale(1) translateY(0); }
-        10% { transform: scale(1.1, 0.9); }
-        30% { transform: scale(1, 1.2) translateY(0); }
-        50% { transform: scale(1) translateY(0); }
-        100% { transform: translateY(0); }
-      }
-      .spring {
-        animation: spring 2s;
-        animation-timing-function: ease-out;
-        animation-iteration-count: infinite;
-      }
     </style>
   </head>
   <body>
     <nav>
-      <h1 class='spring'><a href="..">Twiddler</a></h1>
+      <h1><a href="..">Twiddler</a></h1>
     </nav>
     <header><h1>5</h1></header>
     <div class='meta'>
       <div class='updated'>1611895781494</div>
       <div class='flexible'></div>
     </div>
-    <main><p><img src="https://fingertwiddler.github.io/test/blog/assets/acd11ae981e4a6a0be6bb5c02a254b2ba63c4205f0771f7c1b364c3acef4cd1b" alt="acd11ae981e4a6a0be6bb5c02a254b2ba63c4205f0771f7c1b364c3acef4cd1b"></p>
+    <main><p><img src="https://fingertwiddler.github.io/test2/blog/assets/acd11ae981e4a6a0be6bb5c02a254b2ba63c4205f0771f7c1b364c3acef4cd1b" alt="acd11ae981e4a6a0be6bb5c02a254b2ba63c4205f0771f7c1b364c3acef4cd1b"></p>
 <p>5</p>
 </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>

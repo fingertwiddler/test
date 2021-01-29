@@ -7,7 +7,8 @@
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
-        background: lightyellow;
+        background: rgba(0,0,0,0.9);
+        color: white;
         margin: 0;
         font-size: 14px;
         line-height: 20px;
@@ -15,20 +16,20 @@
       nav {
         padding: 50px;
         margin: 0 auto;
-        text-align: left;
+        text-align: right;
         position: sticky;
         top: 0;
       }
       nav h1 {
         margin: 0;
-        font-size: 80px;
-        line-height: 80px;
+        font-size: 60px;
+        line-height: 60px;
         letter-spacing: -3px;
-        display: inline-block;
       }
       nav h1 a {
         text-decoration: none;
-        color: black;
+        color: white;
+        display: block;
       }
       .hidden {
         display: none;
@@ -49,13 +50,18 @@
         cursor: pointer;
       }
       .container {
-        display: flex;
-        flex-wrap: wrap;
         margin: 50px auto;
-        max-width: 800px;
+        max-width: 600px;
+        width: 100%;
       }
       .flex {
         display: flex !important;
+      }
+      .row:nth-child(even) {
+        margin-right: 100px;
+      }
+      .row:nth-child(odd) {
+        margin-left: 100px;
       }
       .row {
         display: block;
@@ -63,9 +69,8 @@
         font-size: 20px;
         color: rgba(0,0,0,0.7);
         font-family: Sans-serif;
+        margin: 50px 0;
         padding: 25px;
-        width: 400px;
-        box-sizing: border-box;
       }
       .row .image {
         height: 300px;
@@ -76,24 +81,26 @@
         width: 100%;
       }
       .row .title {
-        color: black;
+        color: white;
         font-size: 30px;
         line-height: 40px;
+        font-family: Georgia;
+        font-style: italic;
         margin: 0;
-        letter-spacing: -1px;
       }
       .row .description {
         font-style: normal;
         font-family: sans-serif;
         font-size: 16px;
         line-height: 20px;
-        color: rgba(0,0,0,0.8);
+        color: rgba(117, 117, 117, 1);
         padding-top: 4px;
       }
       .row .updated {
         font-style: normal;
         font-family: sans-serif;
         font-size: 14px;
+        color: silver;
       }
       .row:hover {
         color: black;
@@ -103,16 +110,18 @@
         padding: 80px 0;
       }
       footer a {
-        color: crimson;
+        color: rgba(255,255,255,0.8);
         display: inline-block;
         margin: 5px;
         padding: 2px 5px;
         font-size: 15px;
+        font-family: Georgia;
+        font-style: italic;
         font-weight: bold;
       }
       footer a.current {
         text-decoration: none;
-        color: black;
+        color: gold;
       }
       #menu-button {
         font-weight: bold;
@@ -141,18 +150,6 @@
         text-decoration: none;
         font-size: 14px;
       }
-      @keyframes spring {
-        0% { transform: scale(1) translateY(0); }
-        10% { transform: scale(1.1, 0.9); }
-        30% { transform: scale(1, 1.2) translateY(0); }
-        50% { transform: scale(1) translateY(0); }
-        100% { transform: translateY(0); }
-      }
-      .spring {
-        animation: spring 2s;
-        animation-timing-function: ease-out;
-        animation-iteration-count: infinite;
-      }
     </style>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -164,11 +161,11 @@
   </head>
   <body>
     <nav>
-      <h1 class='spring'><a href='../../'>Twiddler</a></h1>
+      <h1><a href='../../'>Twiddler</a></h1>
     </nav>
     <div class='container'>
       <a class='row' href="../../7">
-          <div class='updated'>1611896254193</div>
+          <div class='updated'>1611897675732</div>
           <h2 class='title'>7</h2>
           <div class='description'>7</div>
           <div class='image'>
@@ -191,26 +188,11 @@
             <img src="../../assets/acd11ae981e4a6a0be6bb5c02a254b2ba63c4205f0771f7c1b364c3acef4cd1b">
           </div>
       </a>
-      <a class='row' href="../../4">
-          <div class='updated'>1611895759914</div>
-          <h2 class='title'>4</h2>
-          <div class='description'>4</div>
-          <div class='image'>
-            <img src="../../assets/3a22ef796d26a988c38ee937af59658b814d497ca57d27f364614885b0da7e1f">
-          </div>
-      </a>
-      <a class='row' href="../../3">
-          <div class='updated'>1611895720733</div>
-          <h2 class='title'>3</h2>
-          <div class='description'>3</div>
-          <div class='image'>
-            <img src="../../assets/ad566a3bd6bc8384e8c5fb58b079b691d15eab413f69815c9e20e2da20660423">
-          </div>
-      </a>
     </div>
     <footer>
           <a href="../../pages/0" class='current'>0</a>
           <a href="../../pages/1">1</a>
+          <a href="../../pages/2">2</a>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
     <script>
