@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        background: gold;
+        margin: 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      nav {
+        padding: 50px;
+        margin: 0 auto;
+        text-align: left;
+        position: sticky;
+        top: 0;
+      }
+      nav h1 {
+        margin: 0;
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -3px;
+        display: inline-block;
+      }
+      nav h1 a {
+        text-decoration: none;
+        color: black;
+      }
+      .hidden {
+        display: none;
+      }
+      .flexible {
+        flex-grow: 1;
+      }
+      nav button, nav .button {
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 1px;
+        background: none;
+        border: none;
+        color: rgba(0,0,0,0.8);
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px auto;
+        max-width: 800px;
+      }
+      .flex {
+        display: flex !important;
+      }
+      .row {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgba(0,0,0,0.7);
+        font-family: Sans-serif;
+        padding: 25px;
+        width: 400px;
+        box-sizing: border-box;
+      }
+      .row .image {
+        height: 300px;
+        overflow: hidden;
+        margin-top: 12px;
+      }
+      .row .image img {
+        width: 100%;
+      }
+      .row .title {
+        color: black;
+        font-size: 30px;
+        line-height: 40px;
+        margin: 0;
+        letter-spacing: -1px;
+      }
+      .row .description {
+        font-style: normal;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        color: rgba(0,0,0,0.8);
+        padding-top: 4px;
+      }
+      .row .updated {
+        font-style: normal;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      .row:hover {
+        color: black;
+      }
+      footer {
+        text-align: center;
+        padding: 80px 0;
+      }
+      footer a {
+        color: rgba(255,255,255,0.8);
+        display: inline-block;
+        margin: 5px;
+        padding: 2px 5px;
+        font-size: 15px;
+        font-family: Georgia;
+        font-style: italic;
+        font-weight: bold;
+      }
+      footer a.current {
+        text-decoration: none;
+        color: gold;
+      }
+      #menu-button {
+        font-weight: bold;
+        margin: 0;
+        padding: 10px;
+        outline: none;
+      }
+      #menu-button img {
+        width: 25px;
+      }
+      .menu {
+        text-align: right;
+      }
+      .menu-items {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 200px;
+        overflow: hidden;
+      }
+      .menu-items.collapsed {
+        max-height: 0;
+      }
+      .menu-items a {
+        display: block;
+        padding: 10px;
+        color: rgba(0,0,0,0.8);
+        text-decoration: none;
+        font-size: 14px;
+      }
+      @keyframes spring {
+        0% { transform: scale(1) translateY(0); }
+        10% { transform: scale(1.1, 0.9); }
+        30% { transform: scale(1, 1.2) translateY(0); }
+        50% { transform: scale(1) translateY(0); }
+        100% { transform: translateY(0); }
+      }
+      .spring {
+        animation: spring 2s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+      }
+    </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("#menu-button").addEventListener("click", (e) => {
+        document.querySelector(".menu-items").classList.toggle("collapsed")
+      })
+    })
+    </script>
+  </head>
+  <body>
+    <nav>
+      <h1 class='spring'><a href='../../'>Twiddler</a></h1>
+    </nav>
+    <div class='container'>
+      <a class='row' href="../../3">
+          <div class='updated'>1611895720733</div>
+          <h2 class='title'>3</h2>
+          <div class='description'>3</div>
+          <div class='image'>
+            <img src="../../assets/ad566a3bd6bc8384e8c5fb58b079b691d15eab413f69815c9e20e2da20660423">
+          </div>
+      </a>
+      <a class='row' href="../../2">
+          <div class='updated'>1611895697618</div>
+          <h2 class='title'>2</h2>
+          <div class='description'>2</div>
+          <div class='image'>
+            <img src="../../assets/6a26fd1c26139c4bc02e008d38f7514e478ae96a9b3c2bae3315fa9c82962956">
+          </div>
+      </a>
+    </div>
+    <footer>
+          <a href="./pages/0">0</a>
+          <a href="./pages/1" class='current'>1</a>
+          <a href="./pages/2">2</a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <script>
+      document.querySelectorAll(".updated").forEach((el) => {
+        let timestamp = parseInt(el.textContent)
+        let ago = timeago.format(timestamp)
+        el.textContent = ago;
+      })
+    </script>
+  </body>
+</html>
